@@ -7,10 +7,8 @@ describe('getHighlightedStringFromPhrase()', () => {
       'Sk',
       'ywalker',
     ])
-    expect(getHighlightedStringFromPhrase('Luke Skywalker Obiwan', 'ob')).toEqual([
-      'Luke Skywalker ',
-      'Ob',
-      'iwan',
-    ])
+    expect(
+      getHighlightedStringFromPhrase('Luke Skywalker Obiwan', 'ob'),
+    ).toEqual(['Luke Skywalker ', 'Ob', 'iwan'])
   })
 })

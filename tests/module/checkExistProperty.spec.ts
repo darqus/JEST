@@ -2,7 +2,7 @@ import { checkExistProperty } from '../../src/helpers/checkExistProperty'
 
 const PERSON = {
   name: 'John Doe',
-  salary: 1000
+  salary: 1000,
 }
 
 describe('checkExistProperty()', () => {

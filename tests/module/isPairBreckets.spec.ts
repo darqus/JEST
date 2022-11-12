@@ -1,9 +1,9 @@
-import { isPairBreckets } from '../../src/helpers/isPairBreckets'
+import { isPairBrackets } from '../../src/helpers/isPairBrackets'
 
-describe('isPairBreckets()', () => {
-  it('isPairBreckets()', () => {
-    expect(isPairBreckets('()')).toEqual(true)
-    expect(isPairBreckets('{()()[]}')).toEqual(true)
-    expect(isPairBreckets('{[(])}')).toEqual(false)
+describe('isPairBrackets()', () => {
+  it('isPairBrackets()', () => {
+    expect(isPairBrackets('()')).toEqual(true)
+    expect(isPairBrackets('{()()[]}')).toEqual(true)
+    expect(isPairBrackets('{[(])}')).toEqual(false)
   })
 })
