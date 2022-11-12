@@ -1,3 +1,4 @@
+import { describe, it, expect } from '@jest/globals'
 import { isMagicMathExpression } from '../../src/helpers/isMagicMathExpression'
 
 const MAGIC_MATH_EXPRESSIONS = [

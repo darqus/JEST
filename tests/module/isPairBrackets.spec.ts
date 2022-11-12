@@ -1,3 +1,4 @@
+import { describe, it, expect } from '@jest/globals'
 import { isPairBrackets } from '../../src/helpers/isPairBrackets'
 
 describe('isPairBrackets()', () => {
