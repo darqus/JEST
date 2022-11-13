@@ -5,6 +5,7 @@ const PWD_MAP = {
   MAX: 20,
   SPC: '!@#$%^&*',
 }
+
 const RE_RASSWORD = new RegExp(
   `^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[${PWD_MAP.SPC}])[A-Za-z\\d${PWD_MAP.SPC}]{${PWD_MAP.MIN},${PWD_MAP.MAX}}$`,
 )
