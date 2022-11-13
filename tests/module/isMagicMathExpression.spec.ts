@@ -17,8 +17,6 @@ const MAGIC_MATH_EXPRESSIONS = [
   0.1 * 0.29, // 0.028999999999999998
 ]
 
-MAGIC_MATH_EXPRESSIONS[0]
-
 describe('isMagicMathExpression()', () => {
   it('isMagicMathExpression()', () => {
     expect(isMagicMathExpression(MAGIC_MATH_EXPRESSIONS[0])).toBe(true)
