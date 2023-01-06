@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
     "composite": true,
-    "types": ["esnext"]
+    "types": ["jest"]
   }
 }
