@@ -1,4 +1,4 @@
-const RE_EMAIL = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+const RE_EMAIL = /^[\w\-\\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
 const PWD_MAP = {
   MIN: 6,
