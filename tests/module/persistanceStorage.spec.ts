@@ -1,0 +1,22 @@
+import { describe, it, expect } from '@jest/globals'
+import {
+  getItem,
+  setItem,
+  removeItem,
+} from '../../src/helpers/persistanceStorage'
+
+describe('persistanceStorage()', () => {
+  it('getItem()', () => {
+    expect(getItem('access-token')).toEqual('test')
+  })
+  it('setItem()', () => {
+    expect(setItem('access-token', 'test')).toEqual(
+      JSON.parse(localStorage.getItem('access-token')),
+    )
+  })
+  it('removeItem()', () => {
+    expect(removeItem('access-token')).toEqual(
+      JSON.parse(localStorage.getItem('access-token')) === null,
+    )
+  })
+})
