@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "test:debug": "jest -i --watchAll"
+    "test:debug": "jest -i --watchAll",
+    "upgrade:interactive": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
     "@jest/globals": "^29.3.1",
