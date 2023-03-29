@@ -8,3 +8,14 @@ It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and m
 
 * See [Original](https://jestjs.io/docs/getting-started)
 * See [Russian](https://jestjs.io/ru/docs/getting-started)
+
+
+Run all tests
+```
+yarn jest
+```
+
+Run different test
+```
+yarn jest getFixedNumber
+```
