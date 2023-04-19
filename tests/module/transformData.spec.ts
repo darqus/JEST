@@ -1,5 +1,6 @@
-import { describe, it, expect } from '@jest/globals'
-import { getHighlightedStringFromPhrase } from '../../src/helpers/transformData'
+import { describe, it, expect, } from '@jest/globals'
+
+import { getHighlightedStringFromPhrase, } from '../../src/helpers/transformData'
 
 describe('isPairBrackets()', () => {
   it('isPairBrackets()', () => {

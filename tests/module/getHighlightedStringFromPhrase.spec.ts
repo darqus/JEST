@@ -1,5 +1,6 @@
-import { describe, it, expect } from '@jest/globals'
-import { getHighlightedStringFromPhrase } from '../../src/helpers/getHighlightedStringFromPhrase'
+import { describe, it, expect, } from '@jest/globals'
+
+import { getHighlightedStringFromPhrase, } from '../../src/helpers/getHighlightedStringFromPhrase'
 
 describe('getHighlightedStringFromPhrase()', () => {
   it('getHighlightedStringFromPhrase()', () => {
@@ -9,7 +10,7 @@ describe('getHighlightedStringFromPhrase()', () => {
       'ywalker',
     ])
     expect(
-      getHighlightedStringFromPhrase('Luke Skywalker Obiwan', 'ob'),
-    ).toEqual(['Luke Skywalker ', 'Ob', 'iwan'])
+      getHighlightedStringFromPhrase('Luke Skywalker Obiwan', 'ob')
+    ).toEqual([ 'Luke Skywalker ', 'Ob', 'iwan', ])
   })
 })

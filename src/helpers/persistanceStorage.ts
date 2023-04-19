@@ -1,11 +1,13 @@
 export const getItem = (key: string | number) => {
   try {
     const result = JSON.parse(
-      localStorage.getItem(key.toString()) ?? '',
+      localStorage.getItem(key.toString()) ?? ''
     ) as Record<string, unknown> | null
+
     return result
   } catch (e) {
     console.error('Error getting data from localStorage', e)
+
     return null
   }
 }

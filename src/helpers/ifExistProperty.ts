@@ -1,4 +1,4 @@
-interface IPerson {
+type IPerson = {
   name: string
   salary: number
 }

@@ -1,4 +1,5 @@
-import { describe, it, expect } from '@jest/globals'
+import { describe, it, expect, } from '@jest/globals'
+
 import {
   getItem,
   setItem,
@@ -11,12 +12,12 @@ describe('persistanceStorage()', () => {
   })
   it('setItem()', () => {
     expect(setItem('access-token', 'test')).toEqual(
-      JSON.parse(localStorage.getItem('access-token')),
+      JSON.parse(localStorage.getItem('access-token'))
     )
   })
   it('removeItem()', () => {
     expect(removeItem('access-token')).toEqual(
-      JSON.parse(localStorage.getItem('access-token')) === null,
+      JSON.parse(localStorage.getItem('access-token')) === null
     )
   })
 })

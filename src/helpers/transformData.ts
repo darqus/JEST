@@ -8,24 +8,26 @@ const getFirstLettersOfWord = (phrase: string, string: string) =>
   !phrase && !string
     ? ''
     : phrase
-        .split(' ')
-        .find((_it: string) =>
-          _it.toLowerCase().startsWith(string.toLowerCase()),
-        )
-        .substring(0, string.length)
+      .split(' ')
+      .find((_it: string) =>
+        _it.toLowerCase().startsWith(string.toLowerCase())
+      )
+      .substring(0, string.length)
 
 export const getHighlightedStringFromPhrase = (
   phrase: string,
-  string: string,
+  string: string
 ) => {
   let result = []
+
   if (!phrase && !string) {
     result = []
   }
 
   const firstLettersOfWord: string = getFirstLettersOfWord(phrase, string)
-  const slpittedPhrase: Array<string> = phrase.split(firstLettersOfWord)
-  result = [slpittedPhrase[0], firstLettersOfWord, slpittedPhrase[1]]
+  const slpittedPhrase: string[] = phrase.split(firstLettersOfWord)
+
+  result = [ slpittedPhrase[0], firstLettersOfWord, slpittedPhrase[1], ]
 
   return result
 }
