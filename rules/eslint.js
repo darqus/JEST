@@ -111,4 +111,8 @@ module.exports = {
 
   // in plain CommonJS modules, you can't use `import foo = require('foo')` to pass this rule, so it has to be disabled
   '@typescript-eslint/no-var-requires': 'off',
+
+  '@typescript-eslint/prefer-nullish-coalescing': 'off',
+
+  '@typescript-eslint/strict-boolean-expressions': 'off'
 }
