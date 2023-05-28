@@ -49,6 +49,6 @@ describe('arrayMethods()', () => {
         price: 100,
         quantity: 8,
       },
-    ])).toEqual(5700)
+    ], [ 'price', 'quantity', ], 0)).toEqual(5700)
   })
 })
