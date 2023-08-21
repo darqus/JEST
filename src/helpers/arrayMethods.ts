@@ -1,18 +1,47 @@
-// type TArrayUnknown = unknown[]
-type TArrayAny = any[]
-type TTotalPriceItem = {
+export type TTotalPriceItem = {
   id: number
   name: string
   price: number
   quantity: number
 }
 
-export const removeFromArray = (arr: TArrayAny, ...items: TArrayAny): TArrayAny => arr.filter(item => !items.includes(item))
+/**
+ * Removes specified items from an array.
+ * @param array - The array to remove items from.
+ * @param itemsToRemove - The items to remove from the array.
+ * @returns A new array with the specified items removed.
+ */
+export const removeFromArray = <T>(array: T[], ...itemsToRemove: T[]): T[] => array.filter(item => !itemsToRemove.includes(item))
 
-export const createUniqueArray = (arr: TArrayAny): TArrayAny => [ ...new Set<any>(arr), ]
+export const createUniqueArray = <T>(array: T[]): T[] => Array.from(new Set(array))
 
-export const insertToArray = (arr: TArrayAny, item: unknown, inBefore?: boolean): TArrayAny => inBefore ? [ item, ...arr, ] : [ ...arr, item, ]
+/**
+ * Inserts an item into an array.
+ * @param array The array to insert the item into.
+ * @param item The item to insert.
+ * @param inBefore Whether to insert the item before the existing elements.
+ * @returns The modified array.
+ */
+export const insertToArray = <T>(array: T[], item: T, inBefore?: boolean): T[] => inBefore ? [ item, ...array, ] : [ ...array, item, ]
 
-export const findIndexInArray = (arr: TArrayAny, callback: (value: unknown, index: number, obj: TArrayAny) => unknown): number => arr.findIndex(callback)
+/**
+ * Finds the index of an item in an array.
+ * @param array The input array.
+ * @param callback The callback function.
+ * @returns The index of the item in the array.
+ */
+export const findIndexInArray = <T>(array: T[], callback: (value: any, index: number, obj: T[]) => unknown): number => array.findIndex(callback)
 
-export const getTotalPrice = (arr: TArrayAny, fields: string[], initial: number): number => arr.reduce((prev: number, curr: TTotalPriceItem) => prev + curr[fields[0]] * curr[fields[1]], initial)
+/**
+ * Calculate the total price of items in an array based on specified property names.
+ * @param items - The array of items.
+ * @param propertyNames - The property names to multiply.
+ * @param initialValue - The initial value of the accumulator.
+ * @returns The total price.
+ */
+export const getTotalPrice = (
+  items: TTotalPriceItem[],
+  propertyNames: string[],
+  initialValue: number
+): number => items.reduce((accumulator: number, item: TTotalPriceItem) => accumulator + item[propertyNames[0]] * item[propertyNames[1]]
+  , initialValue)
