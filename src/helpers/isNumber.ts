@@ -1,1 +1,1 @@
-export const isNumber = (value: number) => !Number.isNaN(value)
+export const isNumber = (value: unknown): value is number => typeof value === 'number'
