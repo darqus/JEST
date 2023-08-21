@@ -3,7 +3,35 @@ import { describe, it, expect, } from '@jest/globals'
 import { getFixedNumber, } from '../../src/helpers/getFixedNumber'
 
 describe('getFixedNumber()', () => {
-  it('getFixedNumber()', () => {
+  it('should return the input value if it is already an integer', () => {
+    const input = 5
+    const result = getFixedNumber(input)
+
+    expect(result).toBe(input)
+  })
+
+  it('should round the input value to two decimal places if it is not an integer', () => {
+    const input = 3.14159
+    const result = getFixedNumber(input)
+
+    expect(result).toBe(3.14)
+  })
+
+  it('should round the input value to two decimal places if it has more than two decimal places', () => {
+    const input = 3.14999
+    const result = getFixedNumber(input)
+
+    expect(result).toBe(3.15)
+  })
+
+  it('should round the input value to two decimal places if it is negative', () => {
+    const input = -3.14159
+    const result = getFixedNumber(input)
+
+    expect(result).toBe(-3.14)
+  })
+
+  it('more', () => {
     expect(getFixedNumber(0)).toEqual(0)
     expect(getFixedNumber(0.0)).toEqual(0)
     expect(getFixedNumber(-0)).toEqual(-0)
