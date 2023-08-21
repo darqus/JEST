@@ -1,11 +1,29 @@
 import { describe, it, expect, } from '@jest/globals'
 
-import { isPairBrackets, } from '../../src/helpers/isPairBrackets'
+import { isPairedBrackets, } from '../../src/helpers/isPairedBrackets'
 
-describe('isPairBrackets()', () => {
-  it('isPairBrackets()', () => {
-    expect(isPairBrackets('()')).toEqual(true)
-    expect(isPairBrackets('{()()[]}')).toEqual(true)
-    expect(isPairBrackets('{[(])}')).toEqual(false)
+describe('isPairedBrackets', () => {
+  it('should return true for strings with balanced paired brackets', () => {
+    expect(isPairedBrackets('()')).toBe(true)
+    expect(isPairedBrackets('[]')).toBe(true)
+    expect(isPairedBrackets('{}')).toBe(true)
+    expect(isPairedBrackets('()[]{}')).toBe(true)
+    expect(isPairedBrackets('[({})]')).toBe(true)
+  })
+
+  it('should return false for strings with unbalanced paired brackets', () => {
+    expect(isPairedBrackets('(')).toBe(false)
+    expect(isPairedBrackets(')')).toBe(false)
+    expect(isPairedBrackets('[')).toBe(false)
+    expect(isPairedBrackets(']')).toBe(false)
+    expect(isPairedBrackets('{')).toBe(false)
+    expect(isPairedBrackets('}')).toBe(false)
+    expect(isPairedBrackets('([)]')).toBe(false)
+  })
+
+  it('should return true for strings without brackets', () => {
+    expect(isPairedBrackets('')).toBe(true)
+    expect(isPairedBrackets('hello world')).toBe(true)
+    expect(isPairedBrackets('12345')).toBe(true)
   })
 })
