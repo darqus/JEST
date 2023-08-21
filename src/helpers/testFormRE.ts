@@ -10,6 +10,6 @@ const RE_RASSWORD = new RegExp(
   `^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[${PWD_MAP.SPC}])[A-Za-z\\d${PWD_MAP.SPC}]{${PWD_MAP.MIN},${PWD_MAP.MAX}}$`
 )
 
-export const testFormEmail = (prop: string) => RE_EMAIL.test(prop)
+export const testFormEmail = (prop: string): boolean => RE_EMAIL.test(prop)
 
-export const testFormRassword = (prop: string) => RE_RASSWORD.test(prop)
+export const testFormRassword = (prop: string): boolean => RE_RASSWORD.test(prop)
