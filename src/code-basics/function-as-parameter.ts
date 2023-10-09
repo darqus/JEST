@@ -2,7 +2,7 @@
 
 // BEGIN (write your solution here)
 
-const filter = (set: number[], predicate: (n: number) => boolean): number[] => {
+/* const filter = (set: number[], predicate: (n: number) => boolean): number[] => {
   const result: number[] = []
 
   for (let i = 0; i < set.length; i++) {
@@ -14,7 +14,10 @@ const filter = (set: number[], predicate: (n: number) => boolean): number[] => {
   }
 
   return result
-}
+} */
+
+const filter = (numbers: number[], isMatch: (n: number) => boolean): number[] => numbers.filter(isMatch)
+
 // END
 
 export default filter
