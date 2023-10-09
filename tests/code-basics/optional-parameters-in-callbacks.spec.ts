@@ -15,7 +15,7 @@ test('map', () => {
 
   expect(result3).toEqual([ 16, 17, ])
 
-  const result4 = map([ 10, 10, 10, ], (n: number, index) => n + index)
+  const result4 = map([ 10, 10, 10, ], (n: number, index: number) => n + index)
 
   expect(result4).toEqual([ 10, 11, 12, ])
 })
