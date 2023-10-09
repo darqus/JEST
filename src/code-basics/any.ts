@@ -1,5 +1,7 @@
 // https://code-basics.com/ru/languages/typescript/lessons/any
 
+// https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+
 /**
  * Parses the given paramsString and returns an object with the parsed parameters.
  *
