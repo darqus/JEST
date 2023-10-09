@@ -1,6 +1,12 @@
 // https://code-basics.com/ru/languages/typescript/lessons/any
 
-/* const getParams = (paramsString: string): Record<string, any> =>
+/**
+ * Parses the given paramsString and returns an object with the parsed parameters.
+ *
+ * @param paramsString - The string containing the parameters.
+ * @returns An object with the parsed parameters.
+ */
+/* const getParams = (paramsString: string): Record<string, string> =>
   Array.from(new URLSearchParams(paramsString)).reduce((acc, [ key, value, ]) => {
     acc[key] = value
 
