@@ -1,6 +1,6 @@
 import { describe, it, expect, } from '@jest/globals'
 
-import { lessonsCount, } from '../../src/code-basics/destructuring'
+import lessonsCount from '../../src/code-basics/destructuring'
 
 describe('lessonsCount', () => {
   it('should return 0 when lessons array is empty', () => {

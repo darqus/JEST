@@ -1,6 +1,6 @@
 import { describe, it, expect, } from '@jest/globals'
 
-import { max, } from '../../src/code-basics/restSpread'
+import max from '../../src/code-basics/restSpread'
 
 describe('max', () => {
   it('should return the maximum number when given multiple numbers', () => {
