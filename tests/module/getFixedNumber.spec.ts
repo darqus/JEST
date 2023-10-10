@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import { getFixedNumber, } from '../../src/helpers/getFixedNumber'
 
 describe('getFixedNumber()', () => {

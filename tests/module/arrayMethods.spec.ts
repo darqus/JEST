@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import { removeFromArray, createUniqueArray, insertToArray, findIndexInArray, getTotalPrice, type TTotalPriceItem, } from '../../src/helpers/arrayMethods'
 
 describe('removeFromArray', () => {

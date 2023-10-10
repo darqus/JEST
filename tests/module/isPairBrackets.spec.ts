@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import { isPairedBrackets, } from '../../src/helpers/isPairedBrackets'
 
 describe('isPairedBrackets', () => {

@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import { ifExistProperty, } from '../../src/helpers/ifExistProperty'
 
 const PERSON = {
