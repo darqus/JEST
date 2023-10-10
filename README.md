@@ -11,25 +11,25 @@ It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and m
 
 
 ### Run all tests
-```
-yarn jest
+```sh
+$ yarn jest
 # or
-yarn run test
+$ yarn run test
 ```
 
 ### Run all tests with watch
-```
-jest -i --watchAll
+```sh
+$ jest -i --watchAll
 # or
-yarn run test:debug
+$ yarn run test:debug
 ```
 
 ### Run different test
-```
-yarn jest getFixedNumber
+```sh
+$ yarn jest getFixedNumber
 ```
 
 ### Run different test with watch
-```
-yarn jest -i --watchAll getFixedNumber
+```sh
+$ yarn jest -i --watchAll getFixedNumber
 ```
