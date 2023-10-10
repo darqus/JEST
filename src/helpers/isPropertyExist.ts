@@ -3,5 +3,4 @@ export type Person = {
   salary: number
 }
 
-// eslint-disable-next-line no-prototype-builtins
-export const isPropertyExist = (object: Person, property: string): boolean => object.hasOwnProperty(property)
+export const isPropertyExist = (object: Person, property: string): boolean => property in object
