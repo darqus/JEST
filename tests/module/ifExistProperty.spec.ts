@@ -1,6 +1,6 @@
-import { ifExistProperty, } from '../../src/helpers/ifExistProperty'
+import { ifExistProperty, type Person, } from '../../src/helpers/ifExistProperty'
 
-const PERSON = {
+const PERSON: Person = {
   name: 'John Doe',
   salary: 1000,
 }
