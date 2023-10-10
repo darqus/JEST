@@ -1,4 +1,4 @@
-import filterEvenNumbers from '../../src/code-basics/anonymous-functions'
+import { filterEvenNumbers, filterOddNumbers, } from '../../src/code-basics/anonymous-functions'
 
 describe('filterEvenNumbers', () => {
   it('should return an empty array when the input set is empty', () => {
@@ -27,5 +27,34 @@ describe('filterEvenNumbers', () => {
     const output: number[] = filterEvenNumbers(input)
 
     expect(output).toEqual([ 2, 4, 6, ])
+  })
+})
+
+describe('filterOddNumbers', () => {
+  it('should return an array with only odd numbers', () => {
+    const input = [ 1, 2, 3, 4, 5, ]
+    const expectedOutput = [ 1, 3, 5, ]
+
+    const result = filterOddNumbers(input)
+
+    expect(result).toEqual(expectedOutput)
+  })
+
+  it('should return an empty array if the input is empty', () => {
+    const input: number[] = []
+    const expectedOutput: number[] = []
+
+    const result = filterOddNumbers(input)
+
+    expect(result).toEqual(expectedOutput)
+  })
+
+  it('should return an empty array if there are no odd numbers in the input', () => {
+    const input = [ 2, 4, 6, 8, 10, ]
+    const expectedOutput: number[] = []
+
+    const result = filterOddNumbers(input)
+
+    expect(result).toEqual(expectedOutput)
   })
 })
