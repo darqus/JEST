@@ -5,7 +5,7 @@
  * @param {string} searchString - The string to search for in the phrase.
  * @returns {string | undefined} - The first letters of the matching word, or undefined if no match is found.
  */
-function getFirstLetters (phrase: string, searchString: string): string | undefined {
+const getFirstLetters = (phrase: string, searchString: string): string | undefined => {
   const words: string[] = phrase.split(' ')
   const matchingWord: string | undefined = words.find((word: string) =>
     word.toLowerCase().startsWith(searchString.toLowerCase())
