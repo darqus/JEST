@@ -10,25 +10,26 @@ It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and m
 * See [Russian](https://jestjs.io/ru/docs/getting-started)
 
 
-Run all tests
+### Run all tests
 ```
 yarn jest
+# or
 yarn run test
 ```
 
-Run all tests with watch
+### Run all tests with watch
 ```
 jest -i --watchAll
+# or
 yarn run test:debug
 ```
 
-Run different test
+### Run different test
 ```
 yarn jest getFixedNumber
-
 ```
 
-Run different test with watch
+### Run different test with watch
 ```
 yarn jest -i --watchAll getFixedNumber
 ```
