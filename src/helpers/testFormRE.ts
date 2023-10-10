@@ -10,6 +10,6 @@ const RE_RASSWORD = new RegExp(
   `^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[${PWD_MAP.SPC}])[A-Za-z\\d${PWD_MAP.SPC}]{${PWD_MAP.MIN},${PWD_MAP.MAX}}$`
 )
 
-export const testFormEmail = (email: string): boolean => RE_EMAIL.test(email)
+export const isEmailValid = (email: string): boolean => RE_EMAIL.test(email)
 
 export const isPasswordValid = (password: string): boolean => RE_RASSWORD.test(password)
