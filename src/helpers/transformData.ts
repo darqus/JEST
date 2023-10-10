@@ -18,7 +18,7 @@ export const getHighlightedStringFromPhrase = (
   phrase: string,
   string: string
 ) => {
-  let result = []
+  let result: string[] = []
 
   if (!phrase && !string) {
     result = []
