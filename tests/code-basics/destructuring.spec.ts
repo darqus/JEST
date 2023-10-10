@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import lessonsCount from '../../src/code-basics/destructuring'
 
 describe('lessonsCount', () => {

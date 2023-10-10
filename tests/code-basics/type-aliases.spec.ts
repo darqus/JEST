@@ -1,5 +1,3 @@
-import { test, expect, } from '@jest/globals'
-
 import getOlderUser, { type User, } from '../../src/code-basics/type-aliases'
 
 test('function', () => {

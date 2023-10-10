@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import isPlainObject from '../../src/code-basics/unknown'
 
 describe('isPlainObject', () => {

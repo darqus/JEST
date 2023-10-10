@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import fail from '../../src/code-basics/never'
 
 describe('fail', () => {

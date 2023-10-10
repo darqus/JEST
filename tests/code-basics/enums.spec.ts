@@ -1,5 +1,3 @@
-import { test, expect, } from '@jest/globals'
-
 import buildModal, { ModalStatus, } from '../../src/code-basics/enums'
 
 test('function', () => {

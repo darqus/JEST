@@ -1,5 +1,3 @@
-import { test, expect, } from '@jest/globals'
-
 import getParams from '../../src/code-basics/any'
 
 test('function', () => {

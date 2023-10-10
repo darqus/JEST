@@ -1,5 +1,3 @@
-import { test, expect, } from '@jest/globals'
-
 import filter from '../../src/code-basics/function-as-parameter'
 
 test('function', () => {

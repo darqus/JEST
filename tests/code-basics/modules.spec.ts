@@ -1,5 +1,3 @@
-import { test, expect, } from '@jest/globals'
-
 import authorize from '../../src/code-basics/modules'
 
 test('function', () => {

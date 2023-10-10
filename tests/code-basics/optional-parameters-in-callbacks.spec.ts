@@ -1,5 +1,3 @@
-import { test, expect, } from '@jest/globals'
-
 import map from '../../src/code-basics/optional-parameters-in-callbacks'
 
 test('map', () => {

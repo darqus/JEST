@@ -1,5 +1,3 @@
-import { test, expect, } from '@jest/globals'
-
 import isComplete from '../../src/code-basics/objects'
 
 test('function', () => {

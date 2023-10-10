@@ -1,5 +1,3 @@
-import { describe, it, expect, } from '@jest/globals'
-
 import max from '../../src/code-basics/restSpread'
 
 describe('max', () => {
