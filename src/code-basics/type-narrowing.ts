@@ -18,10 +18,12 @@ last(12345); // 5 */
 const last = (value: string | number): string | number => {
   switch (typeof value) {
     case 'string': {
+      // return value[value.length - 1] ?? ''
       return value.slice(-1)
     }
 
     default: {
+      // return value % 10
       return Number(value.toString().slice(-1))
     }
   }
