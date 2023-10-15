@@ -1,5 +1,7 @@
 // https://code-basics.com/ru/languages/typescript/lessons/function-overloads
 
+// Перегрузка функций (Function Overloads) 19/53
+
 /* Задание
 
 Реализуйте функцию newYearCongratulate(), которая аналогична примеру на Kotlin из теории:
