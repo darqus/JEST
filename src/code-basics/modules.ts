@@ -1,5 +1,17 @@
 // https://code-basics.com/ru/languages/typescript/lessons/modules
 
+// Система модулей 11/53
+
+/* Задание
+
+Реализуйте namespace Company, в котором экспортируется функция isEmployeeEmail(). Функция принимает почту и домен. Если емейл пользователя содержит указанный домен, то функция возвращает true:
+
+Company.isEmployeeEmail('tirion@hexlet.io', 'hexlet.io');
+// true
+
+Company.isEmployeeEmail('user@example.com', 'hexlet.io');
+// false */
+
 // BEGIN
 // eslint-disable-next-line @typescript-eslint/no-namespace
 namespace Company {
