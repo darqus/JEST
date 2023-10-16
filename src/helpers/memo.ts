@@ -22,3 +22,23 @@ export const memo = <T extends (...args: any[]) => any>(
     return result
   }
 }
+
+export class Memo<T extends (...args: any[]) => any> {
+  private cache: Record<string, ReturnType<T>> = {}
+
+  constructor (private readonly fn: T) {}
+
+  public memoized (...args: Parameters<T>): ReturnType<T> {
+    const key = JSON.stringify(args)
+
+    if (this.cache[key]) {
+      return this.cache[key]
+    }
+
+    const result = this.fn(...args)
+
+    this.cache[key] = result
+
+    return result
+  }
+}

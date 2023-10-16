@@ -1,4 +1,4 @@
-import { memo, } from '../../src/helpers/memo'
+import { Memo, memo, } from '../../src/helpers/memo'
 
 describe('memo', () => {
   it('should return the same result for the same arguments', () => {
@@ -19,5 +19,24 @@ describe('memo', () => {
     const result2 = memoizedMultiply(4, 5)
 
     expect(result1).not.toBe(result2)
+  })
+})
+
+describe('Memo', () => {
+  it('should memoize function calls', () => {
+    const fn = jest.fn((x: number, y: number) => x + y)
+    const newMemo = new Memo(fn)
+
+    expect(newMemo.memoized(2, 3)).toBe(5)
+    expect(fn).toHaveBeenCalledWith(2, 3) // original function should be called
+
+    expect(newMemo.memoized(2, 3)).toBe(5)
+    expect(fn).toHaveBeenCalledTimes(1) // original function should not be called again
+
+    expect(newMemo.memoized(4, 5)).toBe(9)
+    expect(fn).toHaveBeenCalledWith(4, 5) // original function should be called with different arguments
+
+    expect(newMemo.memoized(4, 5)).toBe(9)
+    expect(fn).toHaveBeenCalledTimes(2) // original function should not be called again
   })
 })
