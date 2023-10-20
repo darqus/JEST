@@ -11,14 +11,18 @@ export const memo = <T extends (...args: any[]) => any>(
   return (...args: Parameters<T>): ReturnType<T> => {
     const key = JSON.stringify(args)
 
-    if (cache[key]) {
+    if (key in cache) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return cache[key]
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const result = fn(...args)
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     cache[key] = result
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return result
   }
 }
@@ -26,19 +30,14 @@ export const memo = <T extends (...args: any[]) => any>(
 export class Memo<T extends (...args: any[]) => any> {
   private cache: Record<string, ReturnType<T>> = {}
 
-  constructor (private readonly fn: T) {}
+  constructor (private readonly functionToMemoize: T) {}
 
   public memoized (...args: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify(args)
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const result = this.cache[key] || (this.cache[key] = this.functionToMemoize(...args))
 
-    if (this.cache[key]) {
-      return this.cache[key]
-    }
-
-    const result = this.fn(...args)
-
-    this.cache[key] = result
-
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return result
   }
 }
