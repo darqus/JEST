@@ -1,30 +1,27 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /**
- * Memoize a function by caching its return values.
- * @param fn The function to be memoized.
- * @returns The memoized version of the function.
+ * Memoizes a function to cache its results based on the input arguments.
+ * @param fn - The function to memoize.
+ * @returns The memoized function.
  */
-export const memo = <T extends (...args: any[]) => any>(
-  fn: T
-): ((...args: Parameters<T>) => ReturnType<T>) => {
-  const cache: Record<string, ReturnType<T>> = {}
+export const memoize = <T extends (...args: any[]) => any>(fn: T): T => {
+  const cache = new Map<string, ReturnType<T>>()
 
-  return (...args: Parameters<T>): ReturnType<T> => {
+  return ((...args: Parameters<T>): ReturnType<T> => {
     const key = JSON.stringify(args)
 
-    if (key in cache) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      return cache[key]
+    if (cache.has(key)) {
+      return cache.get(key)
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const result = fn(...args)
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    cache[key] = result
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    cache.set(key, result)
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return result
-  }
+  }) as T
 }
 
 export class Memo<T extends (...args: any[]) => any> {

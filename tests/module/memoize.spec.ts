@@ -1,9 +1,9 @@
-import { Memo, memo, } from '../../src/helpers/memo'
+import { Memo, memoize, } from '../../src/helpers/memoize'
 
-describe('memo', () => {
+describe('memoize', () => {
   it('should return the same result for the same arguments', () => {
     const add = (a: number, b: number) => a + b
-    const memoizedAdd = memo(add)
+    const memoizedAdd = memoize(add)
 
     const result1 = memoizedAdd(2, 3)
     const result2 = memoizedAdd(2, 3)
@@ -13,7 +13,7 @@ describe('memo', () => {
 
   it('should cache results for different arguments', () => {
     const multiply = (a: number, b: number) => a * b
-    const memoizedMultiply = memo(multiply)
+    const memoizedMultiply = memoize(multiply)
 
     const result1 = memoizedMultiply(2, 3)
     const result2 = memoizedMultiply(4, 5)
