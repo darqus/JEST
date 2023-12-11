@@ -3,28 +3,20 @@
  * @param doThing The function to be memoized.
  * @returns The memoized function.
  */
-export function memoize (doThing: (...args: any[]) => any): (...args: any[]) => any {
-  // Create a cache to store the results of the function
-  const theCache = new Map()
+export const memoize = <T extends (...args: any[]) => any>(doThing: T): T => {
+  const cache = new Map<string, ReturnType<T>>()
 
-  // Return the memoized function
-  return (
-    /**
-     * The memoized function that takes the input arguments and returns the result.
-     * @param p1 The first parameter.
-     * @param p2 The second parameter.
-     * @returns The result of the function.
-     */
-    (p1: number, p2: number) => {
-      let theKey: string, theRes: unknown
+  return ((...args: Parameters<T>): ReturnType<T> => {
+    const key = JSON.stringify(args)
 
-      // Check if the result for the input arguments is already cached
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      return theCache.has((theKey = `${p1}-${p2}`))
-        ? theCache.get(theKey) // Return the cached result if it exists
-        : (theCache.set(theKey, (theRes = doThing(p1, p2))), theRes) // Compute the result and cache it
-    }
-  )
+    if (cache.has(key)) return cache.get(key)!
+
+    const result = doThing(...args)
+
+    cache.set(key, result)
+
+    return result
+  }) as T
 }
 
 export class Memo<T extends (...args: any[]) => any> {
