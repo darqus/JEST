@@ -4,6 +4,7 @@ describe('isEmailValid', () => {
   it('should return true for a valid email address', () => {
     expect(isEmailValid('example@domain.zone')).toBeTruthy()
     expect(isEmailValid('john.doe@twitter.org')).toBeTruthy()
+    expect(isEmailValid('john.doe1@twitter1.org')).toBeTruthy()
   })
 
   it('should return false for an invalid email address', () => {
