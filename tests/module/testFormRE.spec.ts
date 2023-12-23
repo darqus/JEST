@@ -26,6 +26,8 @@ describe('isPasswordValid', () => {
     expect(isPasswordValid('Test022^')).toBeTruthy()
     expect(isPasswordValid('Test022&')).toBeTruthy()
     expect(isPasswordValid('Test022*')).toBeTruthy()
+    expect(isPasswordValid('*Test022')).toBeTruthy()
+    expect(isPasswordValid('Test0*22')).toBeTruthy()
     // Add more test cases for valid password
   })
 
