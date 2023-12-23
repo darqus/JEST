@@ -1,4 +1,12 @@
-const RE_EMAIL = /^[\w\-\\.]+@([\w-]+\.)+[[A-Za-z]{2,4}$/
+const EMAIL_RE = {
+  USERNAME: /[^\s@]/,
+  AT: '+@',
+  DOMAIN: /[^\s@]/,
+  DOT: '+.',
+  ZONE: /[A-Za-z]{2,4}/
+}
+
+const RE_EMAIL = new RegExp(`^${EMAIL_RE.USERNAME.source}${EMAIL_RE.AT}${EMAIL_RE.DOMAIN.source}${EMAIL_RE.DOT}${EMAIL_RE.ZONE.source}$`)
 
 const PWD_MAP = {
   MIN: 6,
