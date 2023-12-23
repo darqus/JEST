@@ -10,6 +10,7 @@ describe('isEmailValid', () => {
     expect(isEmailValid('not-an-email')).toBeFalsy()
     expect(isEmailValid('example@domain.z')).toBeFalsy()
     expect(isEmailValid('john.doe.twitter.org')).toBeFalsy()
+    expect(isEmailValid('john@doe.111')).toBeFalsy()
   })
 })
 
