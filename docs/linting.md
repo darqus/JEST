@@ -102,6 +102,18 @@
   yarn eslint "tests/**/*.spec.ts" --fix
   ```
 
+### Правила Jest уровня error
+
+Эти правила защищают от скрытых ошибок в тестах и теперь блокируют CI/коммиты:
+
+- `jest/no-focused-tests` — запрет `test.only`/`fit`/`fdescribe`.
+- `jest/no-identical-title` — исключает дубли заголовков тестов.
+- `jest/expect-expect` — в каждом тесте должен быть `expect`.
+- `jest/no-conditional-expect` — запрет условных `expect` (иначе ассерты могут не выполниться).
+- `jest/no-done-callback` — избегаем `done` в пользу промисов/async-await.
+- `jest/valid-expect` — корректная форма `expect`.
+- `jest/valid-expect-in-promise` — корректные ассерты внутри промисов/`resolves`/`rejects`.
+
 ## CI: GitHub Actions
 
 Workflow: `.github/workflows/ci.yml`

@@ -85,15 +85,16 @@ export default [
       },
     },
     rules: {
-      // Extended Jest ruleset (mostly warn to avoid blocking)
+      // Extended Jest ruleset. Critical correctness rules are errors; stylistic ones are warns.
       'jest/consistent-test-it': ['warn', { fn: 'test', withinDescribe: 'test' }],
-      'jest/expect-expect': 'warn',
+      'jest/expect-expect': 'error',
       'jest/no-alias-methods': 'warn',
       'jest/no-commented-out-tests': 'warn',
-      'jest/no-conditional-expect': 'warn',
+      'jest/no-conditional-expect': 'error',
       'jest/no-deprecated-functions': 'warn',
       'jest/no-disabled-tests': 'warn',
-      'jest/no-done-callback': 'warn',
+      'jest/no-done-callback': 'error',
+      'jest/no-focused-tests': 'error',
       'jest/no-identical-title': 'error',
       'jest/no-interpolation-in-snapshots': 'warn',
       'jest/no-jasmine-globals': 'warn',
@@ -121,6 +122,7 @@ export default [
       'jest/require-top-level-describe': 'off',
       'jest/valid-describe-callback': 'error',
       'jest/valid-expect': 'error',
+      'jest/valid-expect-in-promise': 'error',
       'jest/valid-title': 'warn',
       '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
