@@ -6,9 +6,9 @@ const person: Person = {
 }
 
 describe('isPropertyExist()', () => {
-  it('isPropertyExist()', () => {
-    expect(isPropertyExist(person, 'name')).toEqual(true)
-    expect(isPropertyExist(person, 'salary')).toEqual(true)
-    expect(isPropertyExist(person, 'email')).toEqual(false)
+  test('isPropertyExist()', () => {
+    expect(isPropertyExist(person, 'name')).toBe(true)
+    expect(isPropertyExist(person, 'salary')).toBe(true)
+    expect(isPropertyExist(person, 'email')).toBe(false)
   })
 })

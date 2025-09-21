@@ -8,18 +8,18 @@ test('last', () => {
 })
 
 describe('last', () => {
-  it('should return the last character of a string', () => {
-    expect(last('hello')).toEqual('o')
-    expect(last('code')).toEqual('e')
+  test('should return the last character of a string', () => {
+    expect(last('hello')).toBe('o')
+    expect(last('code')).toBe('e')
   })
 
-  it('should return the last digit of a number', () => {
-    expect(last(123)).toEqual(3)
-    expect(last(4567)).toEqual(7)
+  test('should return the last digit of a number', () => {
+    expect(last(123)).toBe(3)
+    expect(last(4567)).toBe(7)
   })
 
-  it('should return the input value if it is a single character', () => {
-    expect(last('a')).toEqual('a')
-    expect(last(9)).toEqual(9)
+  test('should return the input value if it is a single character', () => {
+    expect(last('a')).toBe('a')
+    expect(last(9)).toBe(9)
   })
 })

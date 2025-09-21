@@ -1,4 +1,4 @@
-import { jest, describe, it, expect } from '@jest/globals'
+import { jest, describe, expect } from '@jest/globals'
 
 import { Memo, memoize } from '../../src/helpers/memoize'
 

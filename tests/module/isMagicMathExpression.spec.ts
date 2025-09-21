@@ -17,7 +17,7 @@ const MAGIC_MATH_EXPRESSIONS = [
 ]
 
 describe('isMagicMathExpression()', () => {
-  it('isMagicMathExpression()', () => {
+  test('isMagicMathExpression()', () => {
     expect(isMagicMathExpression(MAGIC_MATH_EXPRESSIONS[0])).toBe(true)
     expect(isMagicMathExpression(MAGIC_MATH_EXPRESSIONS[1])).toBe(true)
     expect(isMagicMathExpression(MAGIC_MATH_EXPRESSIONS[2])).toBe(false)
