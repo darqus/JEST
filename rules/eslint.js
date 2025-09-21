@@ -26,70 +26,20 @@ export default {
       warnOnUnassignedImports: true,
     },
   ],
-
+  // Logic/quality rules (style handled by Prettier)
   'no-console': ['warn', { allow: ['warn', 'error'] }],
-
   curly: 'error',
-
-  'comma-dangle': [
-    'error',
-    {
-      arrays: 'always-multiline',
-      objects: 'always-multiline',
-      imports: 'always-multiline',
-      exports: 'always-multiline',
-      functions: 'never',
-    },
-  ],
-
-  'array-bracket-spacing': ['error', 'always'],
-
   eqeqeq: ['error', 'smart'],
-
   'prefer-promise-reject-errors': 'off',
-
-  quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: false }],
-
   // allow debugger during development only
   'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-
   'no-useless-constructor': 'off',
-
   'no-shadow': 'off',
-
   'no-var': ['error'],
 
-  'lines-between-class-members': ['error', 'always'],
-
-  'padding-line-between-statements': [
-    'error',
-    {
-      blankLine: 'always',
-      prev: '*',
-      next: ['return', 'export', 'const', 'let'],
-    },
-    { blankLine: 'always', prev: ['const', 'let'], next: '*' },
-    {
-      blankLine: 'any',
-      prev: ['const', 'let'],
-      next: ['const', 'let'],
-    },
-    {
-      blankLine: 'always',
-      prev: ['case', 'default', 'directive'],
-      next: '*',
-    },
-    { blankLine: 'any', prev: 'directive', next: 'directive' },
-  ],
-
-  '@typescript-eslint/comma-dangle': 'off',
-
   '@typescript-eslint/no-unsafe-call': 'warn',
-
   '@typescript-eslint/no-unsafe-return': 'warn',
-
   '@typescript-eslint/no-unsafe-member-access': 'warn',
-
   '@typescript-eslint/no-unsafe-assignment': 'warn',
 
   '@typescript-eslint/no-shadow': ['error'],
