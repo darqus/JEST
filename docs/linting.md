@@ -8,6 +8,13 @@
 - pre-commit хуки (husky + lint-staged)
 - GitHub Actions (CI) для `yarn lint` и `yarn test`
 
+## Что изменилось (сентябрь 2025)
+
+- Стиль кода полностью отдан Prettier. Из `rules/eslint.js` удалены стилистические правила (например, `quotes`, `comma-dangle`, `array-bracket-spacing`, `padding-line-between-statements`, `lines-between-class-members`).
+- В `eslint.config.js` `eslint-config-prettier` подключён последним — он выключает конфликтующие со стилем правила ESLint.
+- Расширен `.editorconfig` для согласованности с Prettier (LF, UTF‑8, 2 пробела, финальная новая строка; для Markdown хвостовые пробелы сохраняются).
+- Пройден автофикс Jest в тестах (замены `it` → `test`, `toEqual(<primitive>)` → `toBe(<primitive>)`, нормализация заголовков) — цель: 0 предупреждений от jest‑правил.
+
 ## TL;DR (как пользоваться)
 
 - Проверка линтера:
@@ -17,6 +24,8 @@
   - `yarn format` — Prettier форматирует весь репозиторий
 - Перед коммитом автоматически запускается `lint-staged` (Prettier + ESLint для изменённых файлов).
 - В VS Code при сохранении файла включены авто-формат Prettier и авто-фиксы ESLint.
+
+> Принцип: ESLint проверяет логику и качество кода, Prettier отвечает за вид кода.
 
 ## Основные файлы конфигурации
 
@@ -66,6 +75,12 @@
 - Тесты: `eslint-plugin-jest` — consistency (test vs it), предпочтительные матчера (`toBe`, `toBeNull`, ...), корректность `expect`
 - Стиль кода управляет Prettier: конфликты отключены `eslint-config-prettier`
 
+### Пример того, что контролирует Prettier (а не ESLint)
+
+- кавычки, хвостовые запятые и переносы строк;
+- отступы/выравнивание;
+- пробелы внутри скобок/объектов/массивов.
+
 ## TypeScript: Project References
 
 В `tsconfig.json` используются ссылки (`references`), поэтому для typed linting включён `parserOptions.projectService: true`. Это корректно работает с Flat Config и не требует перечислять все `include` непосредственно.
@@ -75,6 +90,17 @@
 - Конфигурация в `package.json` → `lint-staged`
 - Хук `.husky/pre-commit` запускает `yarn lint-staged`
 - Поведение: форматирование Prettier + ESLint `--fix` только для изменённых файлов
+
+## Поддержание 0 предупреждений Jest
+
+- Используйте `test(...)` вместо `it(...)` внутри `describe`.
+- Для примитивов предпочитайте `toBe(...)` вместо `toEqual(...)`.
+- Заголовки — в нижнем регистре, если правило этого требует.
+- Для массовой правки только тестов можно выполнить:
+
+  ```bash
+  yarn eslint "tests/**/*.spec.ts" --fix
+  ```
 
 ## CI: GitHub Actions
 
