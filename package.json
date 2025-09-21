@@ -2,9 +2,10 @@
   "name": "test-js-ts",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
-    "test": "jest",
-    "test:debug": "jest -i --watchAll",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:debug": "node --experimental-vm-modules node_modules/jest/bin/jest.js -i --watchAll",
     "update:deps": "yarn upgrade-interactive"
   },
   "devDependencies": {

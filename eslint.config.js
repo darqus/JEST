@@ -1,11 +1,11 @@
-const globals = require("globals");
-const typescriptEslint = require("@typescript-eslint/eslint-plugin");
-const typescriptParser = require("@typescript-eslint/parser");
-const js = require("@eslint/js");
-const rules = require("./rules/eslint");
-const importPlugin = require("eslint-plugin-import");
+import globals from "globals";
+import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import typescriptParser from "@typescript-eslint/parser";
+import js from "@eslint/js";
+import rules from "./rules/eslint.js";
+import importPlugin from "eslint-plugin-import";
 
-module.exports = [
+export default [
   {
     ignores: ["dist/", "node_modules/", ".eslintrc.js"],
   },
@@ -34,7 +34,7 @@ module.exports = [
       parser: typescriptParser,
       parserOptions: {
         project: ["./tsconfig.json"],
-        tsconfigRootDir: __dirname,
+        tsconfigRootDir: process.cwd(),
       },
     },
     rules: {
