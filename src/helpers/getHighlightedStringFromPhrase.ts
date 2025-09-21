@@ -21,13 +21,10 @@ const getFirstLetters = (phrase: string, searchString: string): string | undefin
  * @param {string} string - The string to search within.
  * @returns {string[]} An array containing the highlighted string.
  */
-export const getHighlightedStringFromPhrase = (
-  phrase: string,
-  string: string
-): string[] => {
+export const getHighlightedStringFromPhrase = (phrase: string, string: string): string[] => {
   const firstLetters: string = getFirstLetters(phrase, string)
   const splittedPhrase: string[] = phrase.split(firstLetters)
-  const result: string[] = [ splittedPhrase[0], firstLetters, splittedPhrase[1] ]
+  const result: string[] = [splittedPhrase[0], firstLetters, splittedPhrase[1]]
 
   return result
 }

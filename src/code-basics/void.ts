@@ -26,7 +26,9 @@ forEach([8, 9], (n, index) => console.log(index + n));
 
 // BEGIN (write your solution here)
 const forEach = (set: number[], callback: (n: number, index: number) => void): void => {
-  set.forEach((n, index) => { callback(n, index) })
+  set.forEach((n, index) => {
+    callback(n, index)
+  })
 }
 // END
 

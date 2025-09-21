@@ -19,9 +19,8 @@ formatPrice(null); // '$0.00'
 
   return `$${price.toFixed(2)}`
 } */
-const formatPrice = (price?: number | null): string => price === null || price === undefined
-  ? '$0.00'
-  : `$${price.toFixed(2)}`
+const formatPrice = (price?: number | null): string =>
+  price === null || price === undefined ? '$0.00' : `$${price.toFixed(2)}`
 // END
 
 export default formatPrice

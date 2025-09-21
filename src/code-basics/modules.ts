@@ -15,7 +15,8 @@ Company.isEmployeeEmail('user@example.com', 'hexlet.io');
 // BEGIN
 // eslint-disable-next-line @typescript-eslint/no-namespace
 namespace Company {
-  export const isEmployeeEmail = (email: string, domain: string): boolean => email.endsWith(`@${domain}`)
+  export const isEmployeeEmail = (email: string, domain: string): boolean =>
+    email.endsWith(`@${domain}`)
 }
 // END
 
@@ -31,6 +32,7 @@ type User = {
   return Company.isEmployeeEmail(email, companyDomain)
 } */
 
-const authorize = (user: User | null): boolean => Company.isEmployeeEmail(user?.email ?? '', 'hexlet.io')
+const authorize = (user: User | null): boolean =>
+  Company.isEmployeeEmail(user?.email ?? '', 'hexlet.io')
 
 export default authorize

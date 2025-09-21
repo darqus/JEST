@@ -24,7 +24,7 @@ const removeDuplicates = (array: ArrayOfNumberAndString): ArrayOfNumberAndString
   const uniqueArray: ArrayOfNumberAndString = []
 
   return array.reduce(
-    (result, currentItem) => (result.includes(currentItem) ? result : [ ...result, currentItem ]),
+    (result, currentItem) => (result.includes(currentItem) ? result : [...result, currentItem]),
     uniqueArray
   )
 }

@@ -5,12 +5,14 @@
  * @returns The reversed word.
  */
 export const reverse = (word: string): string =>
-  word.split('')
+  word
+    .split('')
     .reduceRight((acc: string[], item) => {
       acc.push(item)
 
       return acc
-    }, []).join('')
+    }, [])
+    .join('')
 
 /* export const reverse = (word: string): string => {
   // Split the word into an array of characters

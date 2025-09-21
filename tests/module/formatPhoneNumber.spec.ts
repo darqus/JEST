@@ -1,21 +1,25 @@
-import { isNumber, formatPhoneNumber, unformatPhoneNumber } from '../../src/helpers/formatPhoneNumbers'
+import {
+  isNumber,
+  formatPhoneNumber,
+  unformatPhoneNumber,
+} from '../../src/helpers/formatPhoneNumbers'
 
 describe('isNumber', () => {
-  it('should return true if the value is a number', () => {
+  test('should return true if the value is a number', () => {
     expect(isNumber(10)).toBe(true)
   })
 
-  it('should return false if the value is not a number', () => {
+  test('should return false if the value is not a number', () => {
     expect(isNumber('10')).toBe(false)
   })
 
-  it('should return false if the value is a Date object', () => {
+  test('should return false if the value is a Date object', () => {
     expect(isNumber(new Date())).toBe(false)
   })
 })
 
 describe('formatPhoneNumber', () => {
-  it('should format the phone number correctly', () => {
+  test('should format the phone number correctly', () => {
     const phoneNumber = '79930920771'
     const formattedNumber = formatPhoneNumber(phoneNumber)
 
@@ -26,7 +30,7 @@ describe('formatPhoneNumber', () => {
 })
 
 describe('unformatPhoneNumber', () => {
-  it('should remove all non-digit characters from the input', () => {
+  test('should remove all non-digit characters from the input', () => {
     const formattedPhoneNumber = '+7 (123) 456-7890'
     const unformatted = unformatPhoneNumber(formattedPhoneNumber)
 

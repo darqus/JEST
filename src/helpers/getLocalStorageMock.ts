@@ -77,11 +77,11 @@ type Store = string
 export class LocalStorageMock {
   private _store: Record<string, Store> = {}
 
-  get length (): number {
+  get length(): number {
     return Object.keys(this._store).length
   }
 
-  key (n: number): string | null {
+  key(n: number): string | null {
     const keys = Object.keys(this._store)
 
     if (n < keys.length) {
@@ -91,7 +91,7 @@ export class LocalStorageMock {
     return null
   }
 
-  getItem (key: string): Store | null {
+  getItem(key: string): Store | null {
     if (key in this._store) {
       return this._store[key]
     }
@@ -99,18 +99,18 @@ export class LocalStorageMock {
     return null
   }
 
-  setItem (key: string, value: unknown): void {
+  setItem(key: string, value: unknown): void {
     if (!key) {
       return
     }
     this._store[key] = String(value ?? '')
   }
 
-  removeItem (key: string): void {
+  removeItem(key: string): void {
     delete this._store[key]
   }
 
-  clear (): void {
+  clear(): void {
     this._store = {}
   }
 }

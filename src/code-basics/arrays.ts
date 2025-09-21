@@ -16,7 +16,8 @@ filterAnagrams('laser', ['lazing', 'lazy',  'lacer']);
 // BEGIN (write your solution here)
 const getSortedWord = (word: string): string => word.split('').sort().join('')
 
-const filterAnagrams = (anagram: string, listAnagram: string[]): string[] => listAnagram.filter((item) => getSortedWord(item) === getSortedWord(anagram))
+const filterAnagrams = (anagram: string, listAnagram: string[]): string[] =>
+  listAnagram.filter((item) => getSortedWord(item) === getSortedWord(anagram))
 // END
 
 export default filterAnagrams

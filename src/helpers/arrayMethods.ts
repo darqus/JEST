@@ -11,7 +11,8 @@ export type TTotalPriceItem = {
  * @param itemsToRemove - The items to remove from the array.
  * @returns A new array with the specified items removed.
  */
-export const removeFromArray = <T>(array: T[], ...itemsToRemove: T[]): T[] => array.filter(item => !itemsToRemove.includes(item))
+export const removeFromArray = <T>(array: T[], ...itemsToRemove: T[]): T[] =>
+  array.filter((item) => !itemsToRemove.includes(item))
 
 export const createUniqueArray = <T>(array: T[]): T[] => Array.from(new Set(array))
 
@@ -22,7 +23,8 @@ export const createUniqueArray = <T>(array: T[]): T[] => Array.from(new Set(arra
  * @param inBefore Whether to insert the item before the existing elements.
  * @returns The modified array.
  */
-export const insertToArray = <T>(array: T[], item: T, inBefore?: boolean): T[] => inBefore ? [ item, ...array ] : [ ...array, item ]
+export const insertToArray = <T>(array: T[], item: T, inBefore?: boolean): T[] =>
+  inBefore ? [item, ...array] : [...array, item]
 
 /**
  * Finds the index of an item in an array.
@@ -47,10 +49,11 @@ export const getTotalPrice = (
   propertyNames: readonly [keyof TTotalPriceItem, keyof TTotalPriceItem],
   initialValue: number
 ): number => {
-  const [ p1, p2 ] = propertyNames
+  const [p1, p2] = propertyNames
 
   return items.reduce(
-    (accumulator: number, item: TTotalPriceItem) => accumulator + (item[p1] as number) * (item[p2] as number),
+    (accumulator: number, item: TTotalPriceItem) =>
+      accumulator + (item[p1] as number) * (item[p2] as number),
     initialValue
   )
 }

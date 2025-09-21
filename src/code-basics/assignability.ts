@@ -13,11 +13,11 @@ console.log(form.age.validator(form.age.value)); // false
 
 type Form = {
   age: {
-    value: number,
+    value: number
     validator: (val: number) => boolean
-  },
+  }
   name: {
-    value: string,
+    value: string
     validator: (val: string) => boolean
   }
 }

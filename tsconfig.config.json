@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "composite": true,
-    "types": [
-      "jest"
-    ]
+    "types": ["jest"]
   }
 }

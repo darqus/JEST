@@ -1,4 +1,4 @@
-import { createCounter, } from '../../src/new-contest-yandex-ru/001_createCounter'
+import { createCounter } from '../../src/new-contest-yandex-ru/001_createCounter'
 
 test('createCounter: starts from 5', () => {
   const counter = createCounter(5)

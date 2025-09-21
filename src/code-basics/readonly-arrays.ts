@@ -20,7 +20,8 @@ reverse([10, 33, 7, 0]); // [0, 7, 33, 10] */
   return reversed
 } */
 
-const reverse = (array: readonly number[]): number[] => array.map((_, index) => array[array.length - 1 - index])
+const reverse = (array: readonly number[]): number[] =>
+  array.map((_, index) => array[array.length - 1 - index])
 // END
 
 export default reverse

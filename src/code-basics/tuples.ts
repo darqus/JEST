@@ -22,7 +22,8 @@ export type Point = [number, number, number]
 /* const isTheSamePoint = (firstPoint: Point, secondPoint: Point) => {
   return firstPoint[0] === secondPoint[0] && firstPoint[1] === secondPoint[1] && firstPoint[2] === secondPoint[2]
 } */
-const isTheSamePoint = (firstPoint: Point, secondPoint: Point) => firstPoint.every((el, i) => el === secondPoint[i])
+const isTheSamePoint = (firstPoint: Point, secondPoint: Point) =>
+  firstPoint.every((el, i) => el === secondPoint[i])
 // END
 
 export default isTheSamePoint

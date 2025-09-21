@@ -31,7 +31,8 @@ filter(numbers, (n) => n % 2 == 0); // [2, 4]
   return result
 } */
 
-const filter = (numbers: number[], isMatch: (n: number) => boolean): number[] => numbers.filter(isMatch)
+const filter = (numbers: number[], isMatch: (n: number) => boolean): number[] =>
+  numbers.filter(isMatch)
 
 // END
 

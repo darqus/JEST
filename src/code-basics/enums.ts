@@ -18,7 +18,7 @@ const modal = buildModal('hexlet forever', ModalStatus.Opened);
 // BEGIN (write your solution here)
 enum ModalStatus {
   Opened,
-  Closed
+  Closed,
 }
 
 type Modal = {
@@ -26,10 +26,7 @@ type Modal = {
   status: ModalStatus
 }
 
-const buildModal = (
-  text: string,
-  status: ModalStatus
-): Modal => ({
+const buildModal = (text: string, status: ModalStatus): Modal => ({
   text,
   status,
 })

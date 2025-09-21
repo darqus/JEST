@@ -13,7 +13,8 @@ isPlainObject({ name: 'code-basics' }); // true
 isPlainObject([1, 8]); // false */
 
 // BEGIN (write your solution here)
-const isPlainObject = (obj: unknown): obj is Record<string, unknown> => typeof obj === 'object' && obj !== null && !Array.isArray(obj)
+const isPlainObject = (obj: unknown): obj is Record<string, unknown> =>
+  typeof obj === 'object' && obj !== null && !Array.isArray(obj)
 // END
 
 export default isPlainObject

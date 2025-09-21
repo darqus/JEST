@@ -9,7 +9,7 @@
 repeat('hexlet', 2); // hexlethexlet
 repeat('wo', 3); // wowowo */
 
-function repeat (text: string, count: number) {
+function repeat(text: string, count: number) {
   // BEGIN (write your solution here)
   const result = []
 

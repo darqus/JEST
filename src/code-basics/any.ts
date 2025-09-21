@@ -19,34 +19,34 @@ getParams('name=hexlet&count=3&order=asc');
  * @returns An object with the parsed parameters.
  */
 const getParams = (paramsString: string): Record<string, string> => {
-  const parsedParams: Record<string, string> = {};
+  const parsedParams: Record<string, string> = {}
 
   if (paramsString.length === 0) {
-    return parsedParams;
+    return parsedParams
   }
 
-  const pairs = paramsString.split('&');
+  const pairs = paramsString.split('&')
 
   for (const pair of pairs) {
     if (pair === '') {
-      continue;
+      continue
     }
 
-  const [ rawKey, rawValue = '', ] = pair.split('=');
+    const [rawKey, rawValue = ''] = pair.split('=')
 
     if (!rawKey) {
-      continue;
+      continue
     }
 
-    const key = decodeURIComponent(rawKey.replace(/\+/g, ' '));
-    const value = decodeURIComponent(rawValue.replace(/\+/g, ' '));
+    const key = decodeURIComponent(rawKey.replace(/\+/g, ' '))
+    const value = decodeURIComponent(rawValue.replace(/\+/g, ' '))
 
-    parsedParams[key] = value;
+    parsedParams[key] = value
   }
 
-  return parsedParams;
-};
+  return parsedParams
+}
 
 // END
 
-export default getParams;
+export default getParams

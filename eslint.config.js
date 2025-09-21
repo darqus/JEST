@@ -120,7 +120,6 @@ export default [
       'jest/require-to-throw-message': 'warn',
       'jest/require-top-level-describe': 'off',
       'jest/valid-describe-callback': 'error',
-      'jest/valid-describe': 'error',
       'jest/valid-expect': 'error',
       'jest/valid-title': 'warn',
       '@typescript-eslint/no-unsafe-call': 'off',

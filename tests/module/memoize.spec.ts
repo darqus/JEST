@@ -3,7 +3,7 @@ import { jest, describe, it, expect } from '@jest/globals'
 import { Memo, memoize } from '../../src/helpers/memoize'
 
 describe('memoize', () => {
-  it('should return the same result for the same arguments', () => {
+  test('should return the same result for the same arguments', () => {
     const add = (a: number, b: number) => a + b
     const memoizedAdd = memoize(add)
 
@@ -13,7 +13,7 @@ describe('memoize', () => {
     expect(result1).toBe(result2)
   })
 
-  it('should cache results for different arguments', () => {
+  test('should cache results for different arguments', () => {
     const multiply = (a: number, b: number) => a * b
     const memoizedMultiply = memoize(multiply)
 
@@ -24,8 +24,8 @@ describe('memoize', () => {
   })
 })
 
-describe('Memo', () => {
-  it('should memoize function calls', () => {
+describe('memo', () => {
+  test('should memoize function calls', () => {
     const fn = jest.fn((x: number, y: number) => x + y)
     const newMemo = new Memo(fn)
 
