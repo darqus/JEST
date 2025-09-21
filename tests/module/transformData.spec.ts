@@ -1,4 +1,4 @@
-import { getHighlightedStringFromPhrase, } from '../../src/helpers/transformData'
+import { getHighlightedStringFromPhrase } from '../../src/helpers/transformData'
 
 describe('isPairBrackets()', () => {
   it('isPairBrackets()', () => {

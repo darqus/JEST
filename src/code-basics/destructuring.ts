@@ -12,7 +12,7 @@ lessonsCount(course); // 2
 Используйте внутри деструктуризацию, чтобы извлечь уроки прямо в параметрах функции. */
 
 // BEGIN (write your solution here)
-const lessonsCount = ({ lessons, }: { lessons: string[] }) => lessons.length
+const lessonsCount = ({ lessons }: { lessons: string[] }) => lessons.length
 // END
 
 export default lessonsCount

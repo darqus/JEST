@@ -1,4 +1,4 @@
-import { reverse, } from '../../src/helpers/reverse'
+import { reverse } from '../../src/helpers/reverse'
 
 describe('reverse', () => {
   it('should return an empty string when given an empty string', () => {

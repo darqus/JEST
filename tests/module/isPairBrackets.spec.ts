@@ -1,4 +1,4 @@
-import { isPairedBrackets, } from '../../src/helpers/isPairedBrackets'
+import { isPairedBrackets } from '../../src/helpers/isPairedBrackets'
 
 describe('isPairedBrackets', () => {
   it('should return true for strings with balanced paired brackets', () => {

@@ -1,4 +1,4 @@
-import { getHighlightedStringFromPhrase, } from '../../src/helpers/getHighlightedStringFromPhrase'
+import { getHighlightedStringFromPhrase } from '../../src/helpers/getHighlightedStringFromPhrase'
 
 describe('getHighlightedStringFromPhrase()', () => {
   it('getHighlightedStringFromPhrase()', () => {
@@ -9,6 +9,6 @@ describe('getHighlightedStringFromPhrase()', () => {
     ])
     expect(
       getHighlightedStringFromPhrase('Luke Skywalker Obiwan', 'ob')
-    ).toEqual([ 'Luke Skywalker ', 'Ob', 'iwan', ])
+    ).toEqual([ 'Luke Skywalker ', 'Ob', 'iwan' ])
   })
 })

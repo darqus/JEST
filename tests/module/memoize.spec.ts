@@ -1,5 +1,6 @@
 import { jest, describe, it, expect } from '@jest/globals'
-import { Memo, memoize, } from '../../src/helpers/memoize'
+
+import { Memo, memoize } from '../../src/helpers/memoize'
 
 describe('memoize', () => {
   it('should return the same result for the same arguments', () => {

@@ -22,7 +22,7 @@ export const createUniqueArray = <T>(array: T[]): T[] => Array.from(new Set(arra
  * @param inBefore Whether to insert the item before the existing elements.
  * @returns The modified array.
  */
-export const insertToArray = <T>(array: T[], item: T, inBefore?: boolean): T[] => inBefore ? [ item, ...array, ] : [ ...array, item, ]
+export const insertToArray = <T>(array: T[], item: T, inBefore?: boolean): T[] => inBefore ? [ item, ...array ] : [ ...array, item ]
 
 /**
  * Finds the index of an item in an array.
@@ -30,7 +30,10 @@ export const insertToArray = <T>(array: T[], item: T, inBefore?: boolean): T[] =
  * @param callback The callback function.
  * @returns The index of the item in the array.
  */
-export const findIndexInArray = <T>(array: T[], callback: (value: any, index: number, obj: T[]) => unknown): number => array.findIndex(callback)
+export const findIndexInArray = <T>(
+  array: T[],
+  callback: (value: T, index: number, obj: T[]) => boolean
+): number => array.findIndex(callback)
 
 /**
  * Calculate the total price of items in an array based on specified property names.
@@ -41,7 +44,13 @@ export const findIndexInArray = <T>(array: T[], callback: (value: any, index: nu
  */
 export const getTotalPrice = (
   items: TTotalPriceItem[],
-  propertyNames: string[],
+  propertyNames: readonly [keyof TTotalPriceItem, keyof TTotalPriceItem],
   initialValue: number
-): number => items.reduce((accumulator: number, item: TTotalPriceItem) => accumulator + item[propertyNames[0]] * item[propertyNames[1]]
-  , initialValue)
+): number => {
+  const [ p1, p2 ] = propertyNames
+
+  return items.reduce(
+    (accumulator: number, item: TTotalPriceItem) => accumulator + (item[p1] as number) * (item[p2] as number),
+    initialValue
+  )
+}

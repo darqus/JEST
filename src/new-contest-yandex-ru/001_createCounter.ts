@@ -11,14 +11,17 @@ export const createCounter = (init: number): {
   return {
     increment: () => {
       current++
+
       return current
     },
     decrement: () => {
       current--
+
       return current
     },
     reset: () => {
       current = initialValue
+
       return current
     },
   }

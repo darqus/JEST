@@ -9,7 +9,7 @@ export default {
     "!src/**/*.spec.ts"
   ],
   transform: {
-    '^.+\.m?[tj]sx?$': [
+    '^.+\\.m?[tj]sx?$': [
       'ts-jest',
       {
         useESM: true,

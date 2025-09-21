@@ -1,4 +1,4 @@
-import { isEmailValid, isPasswordValid, } from '../../src/helpers/testFormRE'
+import { isEmailValid, isPasswordValid } from '../../src/helpers/testFormRE'
 
 describe('isEmailValid', () => {
   it('should return true for a valid email address', () => {

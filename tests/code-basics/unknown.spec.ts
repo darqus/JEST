@@ -2,13 +2,13 @@ import isPlainObject from '../../src/code-basics/unknown'
 
 describe('isPlainObject', () => {
   it('should return true for a plain object', () => {
-    const obj = { a: 1, b: 2, }
+    const obj = { a: 1, b: 2 }
 
     expect(isPlainObject(obj)).toBe(true)
   })
 
   it('should return false for an array', () => {
-    const arr = [ 1, 2, 3, ]
+    const arr = [ 1, 2, 3 ]
 
     expect(isPlainObject(arr)).toBe(false)
   })

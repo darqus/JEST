@@ -1,4 +1,4 @@
-import { isMagicMathExpression, } from '../../src/helpers/isMagicMathExpression'
+import { isMagicMathExpression } from '../../src/helpers/isMagicMathExpression'
 
 const MAGIC_MATH_EXPRESSIONS = [
   0.1 * 0.1, // 0.010000000000000002

@@ -3,33 +3,41 @@
  * @param doThing The function to be memoized.
  * @returns The memoized function.
  */
-export const memoize = <T extends (...args: any[]) => any>(doThing: T): T => {
-  const cache = new Map<string, ReturnType<T>>()
+export const memoize = <Args extends unknown[], R>(doThing: (...args: Args) => R) => {
+  const cache = new Map<string, R>()
 
-  return ((...args: Parameters<T>): ReturnType<T> => {
+  return ((...args: Args): R => {
     const key = JSON.stringify(args)
 
-    if (cache.has(key)) return cache.get(key)!
+    if (cache.has(key)) {
+      return cache.get(key)!
+    }
 
     const result = doThing(...args)
 
     cache.set(key, result)
 
     return result
-  }) as T
+  })
 }
 
-export class Memo<T extends (...args: any[]) => any> {
-  private cache: Record<string, ReturnType<T>> = {}
+export class Memo<Args extends unknown[], R> {
+  private cache: Record<string, R> = {}
 
-  constructor (private readonly functionToMemoize: T) {}
+  constructor (private readonly functionToMemoize: (...args: Args) => R) {}
 
-  public memoized (...args: Parameters<T>): ReturnType<T> {
+  public memoized (...args: Args): R {
     const key = JSON.stringify(args)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const result = this.cache[key] || (this.cache[key] = this.functionToMemoize(...args))
+    const existing = this.cache[key]
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return result
+    if (existing !== undefined) {
+      return existing
+    }
+
+    const computed = this.functionToMemoize(...args)
+
+    this.cache[key] = computed
+
+    return computed
   }
 }

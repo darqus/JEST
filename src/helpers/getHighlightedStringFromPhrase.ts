@@ -27,7 +27,7 @@ export const getHighlightedStringFromPhrase = (
 ): string[] => {
   const firstLetters: string = getFirstLetters(phrase, string)
   const splittedPhrase: string[] = phrase.split(firstLetters)
-  const result: string[] = [ splittedPhrase[0], firstLetters, splittedPhrase[1], ]
+  const result: string[] = [ splittedPhrase[0], firstLetters, splittedPhrase[1] ]
 
   return result
 }

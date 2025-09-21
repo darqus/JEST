@@ -2,10 +2,10 @@ import lessonsCount from '../../src/code-basics/destructuring'
 
 describe('lessonsCount', () => {
   it('should return 0 when lessons array is empty', () => {
-    expect(lessonsCount({ lessons: [], })).toBe(0)
+    expect(lessonsCount({ lessons: [] })).toBe(0)
   })
 
   it('should return the number of lessons when lessons array is not empty', () => {
-    expect(lessonsCount({ lessons: [ 'lesson1', 'lesson2', 'lesson3', ], })).toBe(3)
+    expect(lessonsCount({ lessons: [ 'lesson1', 'lesson2', 'lesson3' ] })).toBe(3)
   })
 })

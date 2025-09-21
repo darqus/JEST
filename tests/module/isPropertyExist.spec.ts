@@ -1,4 +1,4 @@
-import { type Person, isPropertyExist, } from '../../src/helpers/isPropertyExist'
+import { type Person, isPropertyExist } from '../../src/helpers/isPropertyExist'
 
 const person: Person = {
   name: 'John',

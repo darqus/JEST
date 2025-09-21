@@ -1,4 +1,4 @@
-import { getFixedNumber, } from '../../src/helpers/getFixedNumber'
+import { getFixedNumber } from '../../src/helpers/getFixedNumber'
 
 describe('getFixedNumber()', () => {
   it('should return the input value if it is already an integer', () => {

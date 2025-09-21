@@ -1,4 +1,4 @@
-import getOlderUser, { type User, } from '../../src/code-basics/type-aliases'
+import getOlderUser, { type User } from '../../src/code-basics/type-aliases'
 
 test('function', () => {
   const user1: User = {

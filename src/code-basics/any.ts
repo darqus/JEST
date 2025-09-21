@@ -12,20 +12,6 @@ getParams('per=10&page=5');
 // { per: '10', page: '5' }
 getParams('name=hexlet&count=3&order=asc');
 // { name: 'hexlet', count: '3', order: 'asc' } */
-
-/**
- * Parses the given paramsString and returns an object with the parsed parameters.
- *
- * @param paramsString - The string containing the parameters.
- * @returns An object with the parsed parameters.
- */
-/* const getParams = (paramsString: string): Record<string, string> =>
-  Array.from(new URLSearchParams(paramsString)).reduce((acc, [ key, value, ]) => {
-    acc[key] = value
-
-    return acc
-  }, {}) */
-
 /**
  * Parses the given paramsString and returns an object with the parsed parameters.
  *
@@ -33,15 +19,34 @@ getParams('name=hexlet&count=3&order=asc');
  * @returns An object with the parsed parameters.
  */
 const getParams = (paramsString: string): Record<string, string> => {
-  const params = Array.from(new URLSearchParams(paramsString))
-  const parsedParams: Record<string, string> = {}
+  const parsedParams: Record<string, string> = {};
 
-  for (const [ key, value, ] of params) {
-    parsedParams[key] = value
+  if (paramsString.length === 0) {
+    return parsedParams;
   }
 
-  return parsedParams
-}
+  const pairs = paramsString.split('&');
+
+  for (const pair of pairs) {
+    if (pair === '') {
+      continue;
+    }
+
+  const [ rawKey, rawValue = '', ] = pair.split('=');
+
+    if (!rawKey) {
+      continue;
+    }
+
+    const key = decodeURIComponent(rawKey.replace(/\+/g, ' '));
+    const value = decodeURIComponent(rawValue.replace(/\+/g, ' '));
+
+    parsedParams[key] = value;
+  }
+
+  return parsedParams;
+};
+
 // END
 
-export default getParams
+export default getParams;

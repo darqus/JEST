@@ -35,6 +35,6 @@ const buildModal = (
 })
 // END
 
-export { ModalStatus, }
+export { ModalStatus }
 
 export default buildModal

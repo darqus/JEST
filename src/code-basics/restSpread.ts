@@ -13,7 +13,7 @@ max(234); */
 
 // BEGIN (write your solution here)
 const max = (num: number, ...numbers: number[]): number => {
-  const set = [ num, ...numbers, ]
+  const set = [ num, ...numbers ]
 
   return Math.max(...set)
 }

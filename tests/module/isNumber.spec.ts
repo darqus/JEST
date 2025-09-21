@@ -1,4 +1,4 @@
-import { isNumber, } from '../../src/helpers/isNumber'
+import { isNumber } from '../../src/helpers/isNumber'
 
 describe('isNumber', () => {
   it('should return NaN not equal NaN', () => {

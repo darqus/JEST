@@ -1,29 +1,51 @@
-export const getItem = (key: string | number) => {
+type KeyValueStorage = {
+  getItem (key: string): string | null
+  setItem (key: string, value: string): void
+  removeItem (key: string): void
+}
+
+const resolveStorage = (): KeyValueStorage | null => {
+  const maybe = (globalThis as unknown as { localStorage?: KeyValueStorage }).localStorage
+
+  return maybe ?? null
+}
+
+export const getItem = (key: string | number): Record<string, unknown> | null => {
+  const storage = resolveStorage()
+
+  if (!storage) {
+    return null
+  }
+
+  const raw = storage.getItem(key.toString())
+
+  if (raw == null) {
+    return null
+  }
+
   try {
-    const result = JSON.parse(
-      localStorage.getItem(key.toString()) ?? ''
-    ) as Record<string, unknown> | null
-
-    return result
-  } catch (e) {
-    console.error('Error getting data from localStorage', e)
-
+    return JSON.parse(raw) as Record<string, unknown> | null
+  } catch {
     return null
   }
 }
 
-export const setItem = (key: string, value: unknown | null) => {
-  try {
-    localStorage.setItem(key, JSON.stringify(value))
-  } catch (e) {
-    console.error('Error setting data to localStorage', e)
+export const setItem = (key: string, value: unknown | null): void => {
+  const storage = resolveStorage()
+
+  if (!storage) {
+    return
   }
+
+  storage.setItem(key, JSON.stringify(value))
 }
 
-export const removeItem = (key: string) => {
-  try {
-    localStorage.removeItem(key)
-  } catch (e) {
-    console.error('Error removing data from localStorage', e)
+export const removeItem = (key: string): void => {
+  const storage = resolveStorage()
+
+  if (!storage) {
+    return
   }
+
+  storage.removeItem(key)
 }
