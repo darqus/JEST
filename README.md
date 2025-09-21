@@ -26,9 +26,11 @@ yarn test:debug
 
 - `test` — run jest
 - `test:debug` — run jest in watch mode
+- `test:watch` — shorthand for watch mode
+- `test:coverage` — run tests with coverage report
 - `update:deps` — upgrade deps interactively
-- `lint` — run eslint
-- `lint:fix` — run eslint with --fix
+- `lint` — run eslint (with cache)
+- `lint:fix` — run eslint with --fix (with cache)
 - `format` — run prettier write on repo
 
 ## Linting & formatting

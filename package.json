@@ -6,9 +6,11 @@
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:debug": "node --experimental-vm-modules node_modules/jest/bin/jest.js -i --watchAll",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js -i --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "update:deps": "yarn upgrade-interactive",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix --cache",
     "format": "prettier -w .",
     "prepare": "husky"
   },

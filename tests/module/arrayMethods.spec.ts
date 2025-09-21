@@ -182,7 +182,7 @@ describe('getTotalPrice', () => {
 
   test('should return the initial value when the array is empty', () => {
     const items: TTotalPriceItem[] = []
-    const propertyNames: string[] = ['price', 'quantity']
+    const propertyNames = ['price', 'quantity'] as const
     const initialValue = 0
 
     const result = getTotalPrice(items, propertyNames, initialValue)

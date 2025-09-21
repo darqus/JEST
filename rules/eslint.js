@@ -14,7 +14,7 @@ export default {
       pathGroups: [
         // { pattern: '@jest/globals', group: 'external', position: 'before', },
         { pattern: '@jest/**', group: 'external', position: 'before' },
-
+        { pattern: '@/**', group: 'internal', position: 'before' },
         { pattern: '^[./]', group: 'internal', position: 'before' },
       ],
       pathGroupsExcludedImportTypes: ['ts'],
