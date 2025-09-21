@@ -1,38 +1,71 @@
 # JEST
 
-Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+TypeScript + Jest playground with ESLint (Flat Config), Prettier, Husky, and CI out of the box.
 
-It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!
+![CI](https://github.com/darqus/JEST/actions/workflows/ci.yml/badge.svg)
 
-## Documentation
+## Requirements
 
-- See [Original](https://jestjs.io/docs/getting-started)
-- See [Russian](https://jestjs.io/ru/docs/getting-started)
+- Node.js 20+
+- Yarn 4 (via Corepack). Tip: `corepack enable`
 
-### Run all tests
+## Quick start
 
 ```sh
-$ yarn jest
+# install dependencies
+yarn install
+
+# run all tests
+yarn test
+
+# watch tests interactively
+yarn test:debug
+```
+
+## Scripts
+
+- `test` — run jest
+- `test:debug` — run jest in watch mode
+- `update:deps` — upgrade deps interactively
+- `lint` — run eslint
+- `lint:fix` — run eslint with --fix
+- `format` — run prettier write on repo
+
+## Linting & formatting
+
+The repo uses ESLint (Flat Config) for code quality and Prettier for formatting. Conflicting style rules are disabled via `eslint-config-prettier`.
+
+- Detailed docs: see [docs/linting.md](docs/linting.md)
+- VS Code workspace is preconfigured in `.vscode/` to format and fix on save
+- Pre-commit hooks (husky + lint-staged) auto-run Prettier and ESLint on staged files
+
+## Running Jest directly
+
+Run all tests:
+
+```sh
+yarn jest
+```
+
+Run all tests with watch:
+
+```sh
+jest -i --watchAll
 # or
-$ yarn run test
+yarn test:debug
 ```
 
-### Run all tests with watch
+Run a specific test file:
 
 ```sh
-$ jest -i --watchAll
-# or
-$ yarn run test:debug
+yarn jest getFixedNumber
 ```
 
-### Run different test
+## Further reading
 
-```sh
-$ yarn jest getFixedNumber
-```
+- Official Jest docs: [English](https://jestjs.io/docs/getting-started) · [Russian](https://jestjs.io/ru/docs/getting-started)
+- Linting & formatting: [docs/linting.md](docs/linting.md)
 
-### Run different test with watch
+## Docs
 
-```sh
-$ yarn jest -i --watchAll getFixedNumber
-```
+- Linting & formatting setup: [docs/linting.md](docs/linting.md)
