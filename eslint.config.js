@@ -1,9 +1,9 @@
-import globals from "globals";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
-import js from "@eslint/js";
-import rules from "./rules/eslint.js";
-import importPlugin from "eslint-plugin-import";
+import globals from "globals"
+import typescriptEslint from "@typescript-eslint/eslint-plugin"
+import typescriptParser from "@typescript-eslint/parser"
+import js from "@eslint/js"
+import rules from "./rules/eslint.js"
+import importPlugin from "eslint-plugin-import"
 
 export default [
   {
@@ -42,4 +42,4 @@ export default [
         ...rules
     }
   },
-];
+]
