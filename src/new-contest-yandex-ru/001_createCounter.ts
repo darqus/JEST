@@ -7,13 +7,16 @@
  * @param {number} init - начальное значение счётчика
  * @returns {object} объект с методами increment, decrement, reset
  */
-export const createCounter = (
-  init: number
-): {
+
+type Counter = {
   increment: () => number
   decrement: () => number
   reset: () => number
-} => {
+}
+
+type CreateCounterFn = (init: number) => Counter
+
+export const createCounter: CreateCounterFn = (init) => {
   let current = init
   const initialValue = init
 
