@@ -31,10 +31,10 @@ const PASSWORD_RE_PART = {
   ),
 }
 
-const RE_RASSWORD = new RegExp(
+const RE_PASSWORD = new RegExp(
   `${PASSWORD_RE_PART.HAS_LETTER.source}${PASSWORD_RE_PART.HAS_DIGIT.source}${PASSWORD_RE_PART.HAS_SPECIAL_CHAR.source}${PASSWORD_RE_PART.IS_VALID.source}`
 )
 
-const isPasswordValid = (password: string): boolean => RE_RASSWORD.test(password)
+const isPasswordValid = (password: string): boolean => RE_PASSWORD.test(password)
 
 export { isEmailValid, isPasswordValid }
