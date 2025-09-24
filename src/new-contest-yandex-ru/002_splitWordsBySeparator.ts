@@ -6,5 +6,8 @@
  * Необходимо вернуть массив получившихся после разделения строк,
  * исключая пустые строки
  */
-export const splitWordsBySeparator = (words: string[], separator: string): string[] =>
+
+type SplitWordsBySeparatorFn = (words: string[], separator: string) => string[]
+
+export const splitWordsBySeparator: SplitWordsBySeparatorFn = (words, separator) =>
   words.flatMap((word) => word.split(separator)).filter((word) => word !== '')
