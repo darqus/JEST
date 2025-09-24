@@ -30,5 +30,6 @@
 
   // Keep file endings consistent
   "files.eol": "\n",
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "cSpell.words": ["сериализованы", "Memoizable"]
 }
