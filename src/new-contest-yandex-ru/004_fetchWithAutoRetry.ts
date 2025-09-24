@@ -9,10 +9,12 @@
  * @param {function} fetcher - функция, которая возвращает Promise
  * @param {number} count - максимальное количество попыток
  */
-export const fetchWithAutoRetry = async (
-  fetcher: () => Promise<unknown>,
-  count: number
-): Promise<unknown> => {
+
+type Fetcher = () => Promise<unknown>
+
+type FetchWithAutoRetryFn = (fetcher: Fetcher, count: number) => Promise<unknown>
+
+export const fetchWithAutoRetry: FetchWithAutoRetryFn = async (fetcher, count) => {
   let lastError: unknown
 
   // Приводим count к неотрицательному целому числу
