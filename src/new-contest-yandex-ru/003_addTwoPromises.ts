@@ -4,10 +4,10 @@
  * Реализуйте функцию, которая принимает на вход два объекта Promise
  * с типом `number` и возвращает Promise с их суммой
  */
-export const addTwoPromises = async (
-  promise1: Promise<number>,
-  promise2: Promise<number>
-): Promise<number> => {
+
+type AddTwoPromisesFn = (promise1: Promise<number>, promise2: Promise<number>) => Promise<number>
+
+export const addTwoPromises: AddTwoPromisesFn = async (promise1, promise2) => {
   const results = await Promise.allSettled([promise1, promise2])
 
   let sum = 0
