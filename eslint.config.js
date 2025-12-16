@@ -1,11 +1,11 @@
-import globals from 'globals'
+import js from '@eslint/js'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import typescriptParser from '@typescript-eslint/parser'
-import js from '@eslint/js'
-import rules from './rules/eslint.js'
+import eslintConfigPrettier from 'eslint-config-prettier'
 import importPlugin from 'eslint-plugin-import'
 import jestPlugin from 'eslint-plugin-jest'
-import eslintConfigPrettier from 'eslint-config-prettier'
+import globals from 'globals'
+import rules from './rules/eslint.js'
 
 export default [
   {
