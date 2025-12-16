@@ -2,6 +2,8 @@
   "compilerOptions": {
     "lib": ["esnext"],
     "composite": true,
-    "types": ["jest"]
+    "types": ["jest", "node"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
   }
 }

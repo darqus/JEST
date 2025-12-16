@@ -1,37 +1,87 @@
 # JEST
 
-TypeScript + Jest playground with ESLint (Flat Config), Prettier, Husky, and CI out of the box.
+🚀 Modern TypeScript + Jest playground with ESLint (Flat Config), Prettier, Husky, and comprehensive CI/CD pipeline.
 
 ![CI](https://github.com/darqus/JEST/actions/workflows/ci.yml/badge.svg)
+![Dependencies](https://github.com/darqus/JEST/actions/workflows/dependencies.yml/badge.svg)
 
-## Requirements
+## 📋 Stack Overview
 
-- Node.js 20+
-- Yarn 4 (via Corepack). Tip: `corepack enable`
+### Core Technologies
 
-## Quick start
+- **TypeScript 5.9.3** - Strict type checking with modern ES2022 features
+- **Jest 30.2.0** - Testing framework with comprehensive coverage reporting
+- **Yarn 4.5.3** - Modern package manager with Plug'n'Play support
 
-```sh
-# install dependencies
+### Development Tools
+
+- **ESLint 9.39.2** - Code quality with TypeScript support and flat config
+- **Prettier 3.7.4** - Code formatting with consistent style
+- **Husky 9.1.7** - Git hooks for pre-commit quality checks
+- **lint-staged 16.2.7** - Run linters on staged files
+
+### CI/CD & Automation
+
+- **GitHub Actions** - Automated testing on Node.js 20.x & 22.x
+- **Dependency Updates** - Weekly automated dependency management
+- **Coverage Reporting** - Integrated with Codecov
+- **Build Pipeline** - Type checking and artifact generation
+
+## 🚀 Requirements
+
+- **Node.js 20+** - Latest LTS version recommended
+- **Yarn 4.5.3** - Enabled via Corepack: `corepack enable`
+
+## ⚡ Quick Start
+
+```bash
+# Install dependencies
 yarn install
 
-# run all tests
+# Run all tests
 yarn test
 
-# watch tests interactively
+# Watch tests interactively
 yarn test:debug
+
+# Type checking
+yarn type-check
+
+# Lint and format
+yarn lint:fix && yarn format
 ```
 
-## Scripts
+## 📜 Available Scripts
 
-- `test` — run jest
-- `test:debug` — run jest in watch mode
-- `test:watch` — shorthand for watch mode
-- `test:coverage` — run tests with coverage report
-- `update:deps` — upgrade deps interactively
-- `lint` — run eslint (with cache)
-- `lint:fix` — run eslint with --fix (with cache)
-- `format` — run prettier write on repo
+### Testing
+
+- `test` — Run all Jest tests
+- `test:debug` — Run Jest in interactive watch mode
+- `test:watch` — Shorthand for watch mode
+- `test:coverage` — Run tests with coverage report
+- `test:ci` — CI-optimized test run with coverage
+- `test:changed` — Run tests only for changed files
+- `test:related` — Run tests related to changed files
+
+### Code Quality
+
+- `lint` — Run ESLint with cache and zero warnings tolerance
+- `lint:fix` — Run ESLint with auto-fix and cache
+- `lint:report` — Generate JSON lint report
+- `format` — Format code with Prettier
+- `format:check` — Check code formatting without changes
+- `type-check` — Run TypeScript type checking
+- `type-check:watch` — Watch mode for type checking
+
+### Maintenance
+
+- `update:deps` — Interactive dependency upgrades
+- `update:patches` - Apply package patches
+- `clean` — Remove build artifacts and cache
+- `clean:deps` — Clean reinstall of dependencies
+- `prepare` — Setup Git hooks
+- `pre-commit` — Run lint-staged manually
+- `postinstall` — Setup development environment
 
 ## Linting & formatting
 

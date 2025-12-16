@@ -1,35 +1,36 @@
 {
-  // Use Prettier for formatting
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-
-  // Run ESLint auto-fixes and organize imports on save
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "explicit"
   },
-
-  // ESLint (Flat Config) setup
-  "eslint.useFlatConfig": true,
-  "eslint.alwaysShowStatus": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-
-  // Prettier behavior
-  "prettier.requireConfig": true,
-
-  // Language-specific default formatter to ensure Prettier is used
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "eslint.workingDirectories": ["."],
+  "jest.enableCodeLens": true,
+  "jest.runAllTestsFirst": false,
+  "jest.showCoverageOnLoad": false,
+  "jest.autoEnable": false,
+  "files.associations": {
+    "*.js": "javascriptreact"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "emmet.includeLanguages": {
+    "typescript": "html",
+    "typescriptreact": "html"
   },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/.yarn": true
   },
-
-  // Keep file endings consistent
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
-  "cSpell.words": ["сериализованы", "Memoizable"]
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/coverage/**": true,
+    "**/.yarn/**": true
+  }
 }
