@@ -113,6 +113,20 @@ Run a specific test file:
 yarn jest getFixedNumber
 ```
 
+## Recommended Extension for VS Code
+
+'orta.vscode-jest'
+
+## Recommended VS Code setting for see inline hints
+
+```json
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+
+```
+
 ## Further reading
 
 - Official Jest docs: [English](https://jestjs.io/docs/getting-started) · [Russian](https://jestjs.io/ru/docs/getting-started)
