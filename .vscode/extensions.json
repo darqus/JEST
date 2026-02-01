@@ -4,12 +4,9 @@
     "dbaeumer.vscode-eslint",
     "orta.vscode-jest",
     "ms-vscode.vscode-typescript-next",
-    "bradlc.vscode-tailwindcss",
     "ms-vscode.vscode-json",
     "redhat.vscode-yaml",
     "ms-vscode.vscode-markdown",
-    "formulahendry.auto-rename-tag",
-    "christian-kohler.path-intellisense",
     "streetsidesoftware.code-spell-checker"
   ]
 }
