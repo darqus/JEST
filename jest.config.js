@@ -41,8 +41,8 @@ export default {
   },
   setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
   testMatch: [
-    '<rootDir>/tests/**/*.{spec,test}.{ts,tsx}',
-    '<rootDir>/src/**/*.{spec,test}.{ts,tsx}',
+    '<rootDir>/tests/**/*.{spec,test}.{ts,tsx,js}',
+    '<rootDir>/src/**/*.{spec,test}.{ts,tsx,js}',
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/', '<rootDir>/coverage/'],
   reporters: [
